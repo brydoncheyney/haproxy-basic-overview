@@ -29,6 +29,6 @@ To see requests load balanced across all backend servers:
 
 ## Slides
 
-[HAProxy presentation slides](https://slides.com/brydon/haproxy/edit)
+[HAProxy presentation slides](https://slides.com/brydon/haproxy)
 
 Copyright (c) Brydon Cheyney
