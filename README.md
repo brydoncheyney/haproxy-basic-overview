@@ -6,6 +6,12 @@
 
 Demo to show HAProxy environment and configuration.
 
+## Requirements
+
+- [vagrant](https://www.vagrantup.com/)
+- [https://linuxcontainers.org/](lxc)
+- DNS configuration to resolve lxc subdomains (`dnsmasq`, `/etc/hosts`, etc)
+
 ## Usage
 
 To bring up and configure the haproxy load balancer and backend servers:
