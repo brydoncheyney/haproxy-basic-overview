@@ -9,7 +9,7 @@ Demo to show HAProxy environment and configuration.
 ## Requirements
 
 - [vagrant](https://www.vagrantup.com/)
-- [https://linuxcontainers.org/](lxc)
+- [lxc](https://linuxcontainers.org/)
 - DNS configuration to resolve lxc subdomains (`dnsmasq`, `/etc/hosts`, etc)
 
 ## Usage
