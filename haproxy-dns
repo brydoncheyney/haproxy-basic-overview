@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+[[ $(id -u) -ne 0 ]] && {
+  echo "Permission denied: requires root privilege"; exit 0; }
+
+IP=$(vagrant ssh-config haproxy | awk '/HostName/ {print $2}')
+echo "address=/haproxy.lxc/${IP}" > /etc/dnsmasq.d/haproxy
+systemctl restart lxc-net

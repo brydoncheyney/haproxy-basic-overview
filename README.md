@@ -10,15 +10,35 @@ Demo to show HAProxy environment and configuration.
 
 - [vagrant](https://www.vagrantup.com/)
 - [lxc](https://linuxcontainers.org/)
-- DNS configuration to resolve lxc subdomains (`dnsmasq`, `/etc/hosts`, etc)
+
+### lxc-net
+
+To enable lxc-net DNS name resolution of lxc subdomains add the following entry
+to `/etc/default/lxc-net`
+
+    LXC_DHCP_CONFILE=/etc/dnsmasq.conf
 
 ## Usage
 
-To bring up and configure the haproxy load balancer and backend servers:
+To provision the haproxy load balancer and backend servers:
 
     vagrant up
 
-To see requests directed to backend servers using ACL rules based on host subdomain:
+This creates the following containers:
+
+    vagrant status
+    Current machine states:
+
+    haproxy                   running (lxc)
+    a                         running (lxc)
+    b                         running (lxc)
+
+To setup dns resolution for wildcard \*.haproxy.lxc hosts:
+
+    sudo ./haproxy-dns
+
+To see requests directed to backend servers using ACL rules based on host
+subdomain:
 
     curl http://a.haproxy.lxc
     curl http://b.haproxy.lxc
