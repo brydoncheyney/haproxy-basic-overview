@@ -12,8 +12,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :haproxy do |instance|
     instance.vm.provision :shell, :args => [RPM], inline: <<-SHELL
+      # download haproxy rpm if not present
       [ -f /vagrant/files/$1 ] || (cd /vagrant/files; wget http://au1.mirror.crc.id.au/repo/el6-extra/x86_64/$1)
+      # install rpm
       sudo rpm -U /vagrant/files/$1
+      # configure and restart
       cp /vagrant/files/haproxy.cfg /etc/haproxy/haproxy.cfg
       service haproxy restart
     SHELL
