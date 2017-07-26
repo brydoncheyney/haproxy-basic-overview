@@ -47,6 +47,12 @@ To see requests load balanced across all backend servers:
 
     curl http://haproxy.lxc
 
+To simulate load across all backend servers:
+
+    ./simulate-load [SECONDS]
+
+stop the simulation with <Ctrl>-C!
+
 ## Slides
 
 [HAProxy presentation slides](https://slides.com/brydon/haproxy)
