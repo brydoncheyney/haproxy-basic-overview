@@ -51,7 +51,7 @@ To simulate load across all backend servers:
 
     ./simulate-load [SECONDS]
 
-stop the simulation with <Ctrl>-C!
+stop the simulation with  &lt;Ctrl>-C!
 
 ## Slides
 
