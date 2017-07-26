@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+SLEEP=${1:-0.5}
+
+while true; do
+  curl -s haproxy.lxc -o /dev/null
+  sleep ${SLEEP}
+done
